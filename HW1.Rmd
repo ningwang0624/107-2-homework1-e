@@ -39,6 +39,13 @@ params:
 knitr::opts_chunk$set(echo = TRUE,message=F)
 library(dplyr)
 library(lmtest)
+library(AER)
+library(ggplot2)
+library(knitr)
+library(psych)
+library(broom)
+library(sandwich)
+library(stargazer)
 ```
 
 # 1 擋修的效果
@@ -87,17 +94,22 @@ hw1Data <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/mas
 請進行OLS估計前述的簡單迴歸模型。（注意估計式標準誤必需使用穩健標準誤robust standard error，即使用三明治及HC調整後的標準誤。）
 
 ```{r ans13}
-hw1Data[1:3]
-hw1Data %>% select("個經PR")
-hw1Data %>% lm(formula = 個經PR~可修個體, data=.)
+hw1Data
+model1<- lm(個經PR~可修個體, data = hw1Data)
+model1_coeftest<- coeftest(model1, vcov. = vcovHC, type="HC1")
+summary(model1)
+summary(model1_coeftest)
 ```
 
 ## 1.4 選擇性偏誤
 上題的估計結果很可能不正確，請說明原因故事（非數學證明）。
 
+立足點高的人（即經原PR高）比較傾向認真上個經，而立足點低的人（經原PR低）比較傾向不認真上個經，另外還存在微積分這個遺漏變數，所以造成上題的估計結果可能不正確。
+
 ## 1.5 選擇性偏誤
 這個資料還包含**經原PR**變數，它是學生最後修過的經原成績在該經原班的排名。說明有必要控制**經原PR**的理由（非數學證明）。
 
+若控制了經原PR，則可以確定「會不會修個經」和「個經PR」之間為獨立，可以排除因為經原PR高，而容易選擇修個經，進而獲得較高的個經PR的狀況。
 
 ## 1.6 複迴歸模型
 估算以下的複迴歸模型：
@@ -105,6 +117,10 @@ $$個經PR_i=\beta_0+\beta_1 可修個體_i+經原PR_i+\epsilon_i.$$
 （注意估計式標準誤必需使用穩健標準誤robust standard error，即使用三明治及HC調整後的標準誤。）
 
 ```{r ans16}
+model2<- lm((個經PR)~ (可修個體)+(經原PR), data = hw1Data)
+model2_coeftest<- coeftest(model2, vcov. = vcovHC, type="HC1")
+summary(model2)
+summary(model2_coeftest)
 ```
 
 
@@ -112,6 +128,8 @@ $$個經PR_i=\beta_0+\beta_1 可修個體_i+經原PR_i+\epsilon_i.$$
 請計算**可修個體**為1與0兩群人的**經原PR平均**及**個經PR平均**。（hint: 可利用dplyr套件下的`group_by()`,`summarise()`，及`mean( ,na.rm=T)`, na.rm=T表示計算時排除NA值） 
 
 ```{r ans17}
+group_by(hw1Data,"可修個體") 
+summarise(經原PR平均=mean(hw1Data$經原PR,na.rm=T),個經PR平均=mean(hw1Data$個經PR,na.rm=T))
 ```
 
 
