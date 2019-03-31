@@ -1,0 +1,4 @@
+"0","# 此chunk為環境設定，無需更動"
+"0","knitr::opts_chunk$set(echo = TRUE,message=F)"
+"0","library(dplyr)"
+"0","library(lmtest)"

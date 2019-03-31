@@ -1,0 +1,2 @@
+"0","library(readr)"
+"0","hw1Data <- read_csv(""https://raw.githubusercontent.com/tpemartin/github-data/master/econometrics107-2-hw1.csv"")"
