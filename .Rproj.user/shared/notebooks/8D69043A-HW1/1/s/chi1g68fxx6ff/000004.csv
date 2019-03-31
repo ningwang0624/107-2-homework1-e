@@ -1,4 +1,0 @@
-"0","summarise(經原PR平均=mean(hw1Data$經原PR,na.rm=T),個經PR平均=mean(hw1Data$個經PR,na.rm=T))"
-"2","Error in summarise_(.data, .dots = compat_as_lazy_dots(...)) : 
-  缺少引數 "".data""，也沒有預設值
-"
