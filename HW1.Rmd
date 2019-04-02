@@ -172,6 +172,14 @@ $$\hat{\beta}_1=\bar{y}_1-\bar{y}_0,$$
   
   * $\bar{x}=n_1/n$, 其中$n=n_0+n_1$。
 
+先證明分子：
+$$\sum_{i=1}^N(x_i-\bar{x})(y_i-\bar{y})$$
+$$=\sum_{i=1}^N(x_i-\bar{x})y_i=\sum_{i=1}^N(x_iy_i)$$
+$$N\bar{y_i}-\frac{N_1}{N_0+N_1}\sum_{i=1}^Ny_i$$
+
+$$N_1\bar{y_1}-\frac{N_1}{N_0+N_1}(N_1\bar{y_1}+N_0\bar{y_0})$$
+$$\frac{1}{N_1+N_2}[\frac{N_1(N_1+N_0)\bar{y_i}{\N_1^2\bar{y_i}]$$
+
 
 ## 2.2
 
