@@ -465,8 +465,13 @@ summary(model2)</code></pre>
 <li><p><span class="math display">\[\sum_i w_i=\sum_{i,x_i=1} w_i +\sum_{i,x_i=0} w_i\]</span></p></li>
 <li><p><span class="math inline">\(\bar{x}=n_1/n\)</span>, 其中<span class="math inline">\(n=n_0+n_1\)</span>。</p></li>
 </ul>
-<p>先證明分子： <span class="math display">\[\sum_{i=1}^N(x_i-\bar{x})(y_i-\bar{y})\]</span> <span class="math display">\[=\sum_{i=1}^N(x_i-\bar{x})y_i=\sum_{i=1}^N(x_iy_i)\]</span> <span class="math display">\[N\bar{y_i}-\frac{N_1}{N_0+N_1}\sum_{i=1}^Ny_i\]</span></p>
-<p><span class="math display">\[N_1\bar{y_1}-\frac{N_1}{N_0+N_1}(N_1\bar{y_1}+N_0\bar{y_0})\]</span> <span class="math display">\[\frac{1}{N_1+N_2}[\frac{N_1(N_1+N_0)\bar{y_i}{\N_1^2\bar{y_i}]\]</span></p>
+<span class="math display">\[\begin{align}
+先證明分子：
+\frac{\sum_{i,x_i=1}^N (1-\frac{N_1}{N})(y_i-\bar{y})+{\sum_{i,x_i=0}^N(0-\frac{N_1}{N})(y_i-\bar{y})}
+&amp;=\frac{N_0}{N}\sum{i,x_i=1}^N(y_i-\bar{y})-\frac{N_1}{N}\sum_{i,x_i=0}(y_i-\bar{y})\\
+&amp;=\frac{N_0}{N}\sum_{i,x_i=1}y_i-\frac{N_0N_1}{N}\bar{y}-\frac{N_1}{N}\sum_{i,x_i=0}y_i+\frac{N_0N_1}{N}\bar{y}\\
+&amp;=\frac{N_0}{N}\sum_{i,x_i=1}y_i-\frac{N_1}{N}\sum_{i,x_i=0}y_i\\
+\end{align}\]</span>
 </div>
 <div id="section-1" class="section level2">
 <h2>2.2</h2>
