@@ -9,9 +9,9 @@ output:
       collapsed: true
       smooth_scroll: false
 params:
-  name: ["阿花","阿明"]
-  id: [710761001,710661002]
-  group: "team1"
+  name: ["王逸寧","林奕誠","陳培鴻","吳泓叡"]
+  id: [710761126,710661010,710561118,710661119]
+  group: "teamE"
   url: ""
 ---
 請依狀況更改上面的name,id及group（分別代表組員姓名，學號及組號），但請勿更改下面三行的設定。  
@@ -64,7 +64,6 @@ library(stargazer)
 
 $Y_{1i}-Y_{0i}$
 此處Y_{1i}為可通過限制學生的個經PR，Y_{0i}為沒有通過限制的學生的個經PR，兩個相減為具有通過限制資格學生的個經PR效果。
-
 
 ## 1.2 效應結構
 接續上題，課堂上的treatment dummy即為這裡的**可修個體**dummy，請寫下對應課堂效應結構$Y_i=Y_{0i}+(Y_{1i}-Y_{0i})T_i$之對應寫法（以這裡的文字符號表示）。
@@ -185,7 +184,7 @@ $$=\sum_{i,x_i=1}(1-\frac{N_1}{N})^2+\sum_{i,x_i=0}(0-\frac{N_1}{N})^2$$
 $$=N_1(\frac{N_0}{N})^2+N_0(\frac{N_1}{N})^2$$
 $$=\frac{N_1N_0}{N^2}(N_0+N_1)=\frac{N_1N_0}{N^2}N$$
 $$=\frac{N_1N_0}{N}----(2)$$
-
+將(1)式與(2)式相除可得出:
 $$\hat{\beta_1}=\frac{\frac{N_0}{N}\sum_{i,x_i=1}y_i-\frac{N_1}{N}\sum_{i,x_i=0}y_i}{\frac{N_1N_0}{N}}$$
 $$=\frac{\sum_{i,x_i=1}y_i}{N_1}-\frac{\sum_{i,x_i=0}y_i}{N_0}$$
 $$=\bar{y_1}-\bar{y_0}$$
@@ -198,10 +197,10 @@ $$=\bar{y_1}-\bar{y_0}$$
   
   (b) 若條件在已知已知每個觀測值的$x_i$為1或0下$V(\epsilon_i|x_i)=\sigma^2$（即齊質變異），則條件變異數$V(\hat{\beta}_1|X)=\frac{n}{n_1 n_0}\sigma^2$。
   
-  (c) 若考慮異質變異$V(\epsilon_i|x_i)=\sigma_i^2$，則條件變異數$V(\hat{\beta}_1|X)=\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}$。
+  (c) 若考慮異質變異$V(\epsilon_i|x_i=0)=\sigma_0^2$、$V(\epsilon_i|x_i=1)=\sigma_1^2$，則條件變異數$V(\hat{\beta}_1|X)=\frac{\sigma_0^2}{n_0}+\frac{\sigma_1^2}{n_1}$。
 
 
 ## 2.3 三明治表示式
 線性迴歸模型
 $Y=X\beta+\epsilon$
-的OLS估計式$\hat{\beta}=(X'X)^{-1}(X'Y)$。條件在已知$X$下，令$V(\epsilon|X)=\Sigma$。請證明$V(\hat{\beta}|X)=(X'X)^{-1}\Sigma (X'X)$，具有三明治形式（即可表示成$BMB'$的矩陣相乘形式）。
+的OLS估計式$\hat{\beta}=(X'X)^{-1}(X'Y)$。條件在已知$X$下，令$V(\epsilon|X)=\Sigma$。請證明$V(\hat{\beta}|X)=(X'X)^{-1}X'\Sigma X (X'X)$，具有三明治形式（即可表示成$BMB'$的矩陣相乘形式）。
