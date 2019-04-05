@@ -5,16 +5,16 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2467428641",
+    "hash" : "3885458963",
     "id" : "D5C6177E",
-    "lastKnownWriteTime" : 1554376762,
-    "last_content_update" : 1554376762427,
+    "lastKnownWriteTime" : 1554448058,
+    "last_content_update" : 1554448058647,
     "path" : "~/Documents/GitHub/107-2-homework1-e/HW1.Rmd",
     "project_path" : "HW1.Rmd",
     "properties" : {
-        "cursorPosition" : "172,0",
+        "cursorPosition" : "81,0",
         "last_setup_crc32" : "",
-        "scrollLine" : "166"
+        "scrollLine" : "79"
     },
     "relative_order" : 1,
     "source_on_save" : false,
