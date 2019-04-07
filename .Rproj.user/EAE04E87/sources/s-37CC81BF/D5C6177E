@@ -7,14 +7,14 @@
     "folds" : "",
     "hash" : "2174672891",
     "id" : "D5C6177E",
-    "lastKnownWriteTime" : 1554645079,
-    "last_content_update" : 1554645079876,
+    "lastKnownWriteTime" : 1554645190,
+    "last_content_update" : 1554645190081,
     "path" : "~/Documents/GitHub/107-2-homework1-e/HW1.Rmd",
     "project_path" : "HW1.Rmd",
     "properties" : {
-        "cursorPosition" : "229,37",
+        "cursorPosition" : "246,0",
         "last_setup_crc32" : "",
-        "scrollLine" : "223"
+        "scrollLine" : "228"
     },
     "relative_order" : 1,
     "source_on_save" : false,
