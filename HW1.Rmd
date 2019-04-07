@@ -63,15 +63,15 @@ library(stargazer)
 我們以個體經濟學為考量之進階課程，學生學習成效以**個經PR**（即學生第一次第一學期修完個經在同班的排名）來衡量。令**可修個體**虛擬變數其值為1若該學生通過修課限制可以修個經，反之為0。請寫下正確的效應結構（ 課堂上的Y即這裡的 **個經PR**，請對應課堂的$Y_{1i}-Y_{0i}$寫法，寫出這題的表示句子。)
 
 <table><tr><td bgcolor=#F5DEB3>
-此處Y_{1i}為可通過限制學生的個經PR，Y_{0i}為沒有通過限制的學生的個經PR，兩個相減為具有通過限制資格學生的個經PR效果。
+此處$Y_{1i}$為可通過限制學生的個經PR，$Y_{0i}$為沒有通過限制的學生的個經PR，兩個相減為具有通過限制資格學生的個經PR效果。
 </td></tr></table>
 
 ## 1.2 效應結構
 接續上題，課堂上的treatment dummy即為這裡的**可修個體**dummy，請寫下對應課堂效應結構$Y_i=Y_{0i}+(Y_{1i}-Y_{0i})T_i$之對應寫法（以這裡的文字符號表示）。
 
 <table><tr><td bgcolor=#F5DEB3>
-i泛指任何人，此處Y_i泛指學生的個經PR，Y_{1i}為可通過限制學生的個經PR，Y_{0i}為沒有通過限制的學生的個經PR，兩個相減為具有通過限制資格學生的個經PR效果。
-(Y_{1i}-Y_{0i})T_i代表通過限制的學生（T=1），該學生的個經PR為未通過限制學生的效果加上通過限制學生的效果。反之，若未通過限制的學生（T=0），則該學生的個經PR為只有未通過限制學生的效果。
+i泛指任何人，此處$Y_{i}$泛指學生的個經PR，$Y_{1i}$為可通過限制學生的個經PR，$Y_{0i}$為沒有通過限制的學生的個經PR，兩個相減為具有通過限制資格學生的個經PR效果。
+$(Y_{1i}-Y_{0i})T_i$代表通過限制的學生（T=1），該學生的個經PR為未通過限制學生的效果加上通過限制學生的效果。反之，若未通過限制的學生（T=0），則該學生的個經PR為只有未通過限制學生的效果。
 </td></tr></table>
 
 ## 1.3 簡單迴歸模型
@@ -221,15 +221,20 @@ $$\hat{\beta}_1=\bar{y}_1-\bar{y}_0,$$
 &E(\hat{\beta_1}|x)=E(\beta_1+\frac{\sum_{i,x_i=1}^N(x_i-\bar{x})\epsilon_i}{\sum_{i,x_i=1}^N(x_i-\bar{x})^2}|x)\\
 &因為\epsilon_i|x_i)=0,所以E(\hat{\beta_1}|x)=\beta_1+0\\
 &故E(\hat{\beta_1})=\beta_1\\
-&(b)V(\hat{\beta}_1|X))\\
+&(b)V(\hat{\beta}_1|x))\\
 &=V(\frac{\sum_{i,x_i=1}^N(x_i-\bar{x})\epsilon_i}{\sum_{i,x_i=1}^N(x_i-\bar{x})^2}|x)\\
 &=E[(\frac{\sum_{i,x_i=1}^N(x_i-\bar{x})\epsilon_i}{\sum_{i,x_i=1}^N(x_i-\bar{x})^2})^2|x]-[E(\frac{\sum_{i,x_i=1}^N(x_i-\bar{x})\epsilon_i}{\sum_{i,x_i=1}^N(x_i-\bar{x})^2}|x)]^2\\
 &=\frac{1}{[\sum_{i,x_i=1}^N(x_i-\bar{x})^2]^2}\sum_{i,x_i=1}^NE(x_i-\bar{x})^2\epsilon_i^2]x\\
 &=\frac{\sigma^2}{\sum_{i,x_i=1}^N(x_i-\bar{x})^2}\\
 &分母套入2.1分母的計算結果\\
 &=\frac{\sigma^2}{\frac{N_0N_1}{N}}\\
-&=\frac{N\sigma^2}{N_0N_1)}
-(c)
+&=\frac{N\sigma^2}{N_0N_1}\\
+&(c)V(\hat{\beta}_1|x)\\
+&=V(\bar{y_1}-\bar{y_0}|x)\\
+&=V(\bar{y_1})+V(\bar{y_0})-2cov(y_1,y_0)\\
+&套入2.2(b)的計算結果\\
+&=\frac{N_1}{N_1^2}\sigma_1^2+\frac{N_0}{N_0^2}\sigma_0^2\\
+&=\frac{\sigma_1^2}{N_1}+\frac{\sigma_0^2}{N_0}\\
 \end{align}
 </td></tr></table>
 

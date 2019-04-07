@@ -317,7 +317,7 @@ div.tocify {
 <table>
 <tr>
 <td bgcolor="#F5DEB3">
-此處Y_{1i}為可通過限制學生的個經PR，Y_{0i}為沒有通過限制的學生的個經PR，兩個相減為具有通過限制資格學生的個經PR效果。
+此處<span class="math inline">\(Y_{1i}\)</span>為可通過限制學生的個經PR，<span class="math inline">\(Y_{0i}\)</span>為沒有通過限制的學生的個經PR，兩個相減為具有通過限制資格學生的個經PR效果。
 </td>
 </tr>
 </table>
@@ -328,7 +328,7 @@ div.tocify {
 <table>
 <tr>
 <td bgcolor="#F5DEB3">
-i泛指任何人，此處Y_i泛指學生的個經PR，Y_{1i}為可通過限制學生的個經PR，Y_{0i}為沒有通過限制的學生的個經PR，兩個相減為具有通過限制資格學生的個經PR效果。 (Y_{1i}-Y_{0i})T_i代表通過限制的學生（T=1），該學生的個經PR為未通過限制學生的效果加上通過限制學生的效果。反之，若未通過限制的學生（T=0），則該學生的個經PR為只有未通過限制學生的效果。
+i泛指任何人，此處<span class="math inline">\(Y_{i}\)</span>泛指學生的個經PR，<span class="math inline">\(Y_{1i}\)</span>為可通過限制學生的個經PR，<span class="math inline">\(Y_{0i}\)</span>為沒有通過限制的學生的個經PR，兩個相減為具有通過限制資格學生的個經PR效果。 <span class="math inline">\((Y_{1i}-Y_{0i})T_i\)</span>代表通過限制的學生（T=1），該學生的個經PR為未通過限制學生的效果加上通過限制學生的效果。反之，若未通過限制的學生（T=0），則該學生的個經PR為只有未通過限制學生的效果。
 </td>
 </tr>
 </table>
@@ -534,7 +534,7 @@ summary(model2)</code></pre>
 <tr>
 <td bgcolor="#F5DEB3">
 <span class="math display">\[\begin{align}
-&amp;(a)\hat{\beta_1}
+&amp;(a)\hat{\beta_1}\\
 &amp;=\frac{\sum_{i,x_i=1}^N(x_i-\bar{x})(y_i-\bar{y})}{\sum_{i,x_i=1}^N(x_i-\bar{x})^2}\\
 &amp;=\frac{\sum_{i,x_i=1}^N(x_i-\bar{x})y_i}{\sum_{i,x_i=1}^N(x_i-\bar{x})^2}\\
 &amp;=\frac{\sum_{i,x_i=1}^N(x_i-\bar{x})(\beta_0+\beta_1x_i+\epsilon_i)}{\sum_{i,x_i=1}^N(x_i-\bar{x})^2}\\
@@ -543,15 +543,20 @@ summary(model2)</code></pre>
 &amp;E(\hat{\beta_1}|x)=E(\beta_1+\frac{\sum_{i,x_i=1}^N(x_i-\bar{x})\epsilon_i}{\sum_{i,x_i=1}^N(x_i-\bar{x})^2}|x)\\
 &amp;因為\epsilon_i|x_i)=0,所以E(\hat{\beta_1}|x)=\beta_1+0\\
 &amp;故E(\hat{\beta_1})=\beta_1\\
-&amp;(b)V(\hat{\beta}_1|X))\\
+&amp;(b)V(\hat{\beta}_1|x))\\
 &amp;=V(\frac{\sum_{i,x_i=1}^N(x_i-\bar{x})\epsilon_i}{\sum_{i,x_i=1}^N(x_i-\bar{x})^2}|x)\\
 &amp;=E[(\frac{\sum_{i,x_i=1}^N(x_i-\bar{x})\epsilon_i}{\sum_{i,x_i=1}^N(x_i-\bar{x})^2})^2|x]-[E(\frac{\sum_{i,x_i=1}^N(x_i-\bar{x})\epsilon_i}{\sum_{i,x_i=1}^N(x_i-\bar{x})^2}|x)]^2\\
 &amp;=\frac{1}{[\sum_{i,x_i=1}^N(x_i-\bar{x})^2]^2}\sum_{i,x_i=1}^NE(x_i-\bar{x})^2\epsilon_i^2]x\\
 &amp;=\frac{\sigma^2}{\sum_{i,x_i=1}^N(x_i-\bar{x})^2}\\
 &amp;分母套入2.1分母的計算結果\\
 &amp;=\frac{\sigma^2}{\frac{N_0N_1}{N}}\\
-&amp;=\frac{N\sigma^2}{N_0N_1)}
-(c)
+&amp;=\frac{N\sigma^2}{N_0N_1}\\
+&amp;(c)V(\hat{\beta}_1|x)\\
+&amp;=V(\bar{y_1}-\bar{y_0}|x)\\
+&amp;=V(\bar{y_1})+V(\bar{y_0})-2cov(y_1,y_0)\\
+&amp;套入2.2(b)的計算結果\\
+&amp;=\frac{N_1}{N_1^2}\sigma_1^2+\frac{N_0}{N_0^2}\sigma_0^2\\
+&amp;=\frac{\sigma_1^2}{N_1}+\frac{\sigma_0^2}{N_0}\\
 \end{align}\]</span>
 </td>
 </tr>
